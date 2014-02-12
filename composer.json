@@ -1,0 +1,20 @@
+{
+    "name": "philo/laravel-blade-standalone",
+    "description": "Use the simple and yet powerful Laravel Blade templating engine as a standalone component.",
+    "keywords": ["laravel", "blade"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philo Hermans",
+            "email": "me@philohermans.com"
+        }
+    ],
+    "require": {
+        "illuminate/view": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Philo\\Blade\\": "src"
+        }
+    }
+}
