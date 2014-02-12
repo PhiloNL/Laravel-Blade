@@ -1,5 +1,5 @@
 {
-    "name": "philo/laravel-blade-standalone",
+    "name": "philo/laravel-blade",
     "description": "Use the simple and yet powerful Laravel Blade templating engine as a standalone component.",
     "keywords": ["laravel", "blade"],
     "license": "MIT",
