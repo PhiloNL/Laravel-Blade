@@ -18,13 +18,13 @@ class Blade {
 	 * Array containg paths where to look for blade files
 	 * @var array
 	 */
-	protected $viewPaths;
+	public $viewPaths;
 
 	/**
 	 * Location where to store cached views
 	 * @var string
 	 */
-	protected $cachePath;
+	public $cachePath;
 
 	/**
 	 * @var Illuminate\Container\Container
