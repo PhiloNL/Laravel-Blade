@@ -10,7 +10,7 @@ use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\FileViewFinder;
-use Illuminate\View\Environment;
+use Illuminate\View\Factory;
 
 class Blade {
 
@@ -32,7 +32,7 @@ class Blade {
 	protected $container;
 
 	/**
-	 * @var Illuminate\View\Environment
+	 * @var Illuminate\View\Factory
 	 */
 	protected $instance;
 
@@ -57,7 +57,7 @@ class Blade {
 
 		$this->registerViewFinder();
 
-		$this->instance = $this->registerEnvironment();
+		$this->instance = $this->registerFactory();
 	}
 
 	public function view()
@@ -161,7 +161,7 @@ class Blade {
 	 *
 	 * @return void
 	 */
-	public function registerEnvironment()
+	public function registerFactory()
 	{
 		// Next we need to grab the engine resolver instance that will be used by the
 		// environment. The resolver will be used by an environment to get each of
@@ -170,7 +170,7 @@ class Blade {
 
 		$finder = $this->container['view.finder'];
 
-		$env = new Environment($resolver, $finder, $this->container['events']);
+		$env = new Factory($resolver, $finder, $this->container['events']);
 
 		// We will also set the container instance on this view environment since the
 		// view composers may be classes registered in the container, which allows
