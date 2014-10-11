@@ -1,10 +1,10 @@
 ### Installation
-The package can be installed via Composer by requiring the "philo/laravel-blade": "dev-master" package in your project's composer.json.
+The package can be installed via Composer by requiring the "philo/laravel-blade": "2.0" package in your project's composer.json.
 
 ```json
 [
 	"require": {
-	    "philo/laravel-blade": "dev-master"
+	    "philo/laravel-blade": "2.*"
 	}
 ]
 ```
