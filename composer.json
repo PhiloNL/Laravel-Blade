@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "illuminate/view": "4.1.*"
+        "illuminate/view": "4.2.*"
     },
     "autoload": {
         "psr-4": {
