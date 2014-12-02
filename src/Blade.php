@@ -180,4 +180,8 @@ class Blade {
 		return $env;
 	}
 
+	public function getCompiler()
+	{
+		return $this->container['blade.compiler'];
+	}
 }
