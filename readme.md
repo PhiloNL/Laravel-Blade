@@ -34,7 +34,7 @@ $views = __DIR__ . '/views';
 $cache = __DIR__ . '/cache';
 
 $blade = new Blade($views, $cache);
-echo $blade->view()->make('hello');
+echo $blade->view()->make('hello')->render();
 ```
 
 You can use all blade features as described in the Laravel 5 documentation:
