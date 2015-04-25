@@ -1,10 +1,21 @@
-### Installation
-The package can be installed via Composer by requiring the "philo/laravel-blade": "2.0" package in your project's composer.json.
+### Installation (Blade Laravel 5)
+The package can be installed via Composer by requiring the "philo/laravel-blade": "3.0" package in your project's composer.json.
 
 ```json
 [
 	"require": {
-	    "philo/laravel-blade": "2.*"
+	    "philo/laravel-blade": "3.*"
+	}
+]
+```
+
+### Installation (Blade Laravel 4)
+The package can be installed via Composer by requiring the "philo/laravel-blade": "3.0" package in your project's composer.json.
+
+```json
+[
+	"require": {
+	    "philo/laravel-blade": "3.*"
 	}
 ]
 ```
