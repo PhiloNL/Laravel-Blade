@@ -40,8 +40,9 @@ class Blade {
 	 * Initialize class
 	 * @param array  $viewPaths
 	 * @param string $cachePath
+	 * @param Illuminate\Events\Dispatcher $events
 	 */
-	function __construct($viewPaths = array(), $cachePath) {
+	function __construct($viewPaths = array(), $cachePath, Dispatcher $events = null) {
 
 		$this->container = new Container;
 
@@ -51,7 +52,7 @@ class Blade {
 
 		$this->registerFilesystem();
 
-		$this->registerEvents();
+		$this->registerEvents($events ?: new Dispatcher);
 
 		$this->registerEngineResolver();
 
@@ -71,10 +72,11 @@ class Blade {
 			return new Filesystem;
 		});
 	}
-	public function registerEvents()
+	public function registerEvents(Dispatcher $events)
 	{
-		$this->container->bindShared('events', function(){
-			return new Dispatcher;
+		$this->container->bindShared('events', function() use ($events)
+		{
+			return $events;
 		});
 	}
 	/**
