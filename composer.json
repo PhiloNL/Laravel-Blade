@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "illuminate/view": "~5",
-        "illuminate/events": "~5"
+        "illuminate/view": "~5.0.0",
+        "illuminate/events": "~5.0.0"
     },
     "autoload": {
         "psr-4": {
