@@ -68,16 +68,16 @@ class Blade {
 
 	public function registerFilesystem()
 	{
-		$this->container->bindShared('files', function(){
+		$this->container->bind('files', $this->container->share(function(){
 			return new Filesystem;
-		});
+		}), true);
 	}
 	public function registerEvents(Dispatcher $events)
 	{
-		$this->container->bindShared('events', function() use ($events)
+		$this->container->bind('events', $this->container->share(function() use ($events)
 		{
 			return $events;
-		});
+		}), true);
 	}
 	/**
 	 * Register the engine resolver instance.
@@ -88,7 +88,7 @@ class Blade {
 	{
 		$me = $this;
 
-		$this->container->bindShared('view.engine.resolver', function($app) use ($me)
+		$this->container->bind('view.engine.resolver', $this->container->share(function($app) use ($me)
 		{
 			$resolver = new EngineResolver;
 
@@ -101,7 +101,7 @@ class Blade {
 			}
 
 			return $resolver;
-		});
+		}), true);
 	}
 
 	/**
@@ -129,12 +129,12 @@ class Blade {
 		// The Compiler engine requires an instance of the CompilerInterface, which in
 		// this case will be the Blade compiler, so we'll first create the compiler
 		// instance to pass into the engine so it can compile the views properly.
-		$this->container->bindShared('blade.compiler', function($app) use ($me)
+		$this->container->bind('blade.compiler', $this->container->share(function($app) use ($me)
 		{
 			$cache = $me->cachePath;
 
 			return new BladeCompiler($app['files'], $cache);
-		});
+		}), true);
 
 		$resolver->register('blade', function() use ($app)
 		{
@@ -150,12 +150,12 @@ class Blade {
 	public function registerViewFinder()
 	{
 		$me = $this;
-		$this->container->bindShared('view.finder', function($app) use ($me)
+		$this->container->bind('view.finder', $this->container->share(function($app) use ($me)
 		{
 			$paths = $me->viewPaths;
 
 			return new FileViewFinder($app['files'], $paths);
-		});
+		}), true);
 	}
 
 	/**
