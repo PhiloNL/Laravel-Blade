@@ -15,7 +15,7 @@ use Illuminate\View\Factory;
 class Blade {
 
 	/**
-	 * Array containg paths where to look for blade files
+	 * Array containing paths where to look for blade files
 	 * @var array
 	 */
 	public $viewPaths;
