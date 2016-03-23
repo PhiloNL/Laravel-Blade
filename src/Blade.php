@@ -19,7 +19,6 @@ class Blade {
      * @var array
      */
     public $data = [];
-
     /**
      * Array containing paths where to look for blade files
      * @var array
@@ -181,7 +180,7 @@ class Blade {
 
         $env = new Factory($resolver, $finder, $this->container['events']);
 
-        // add global/shared data to views
+        // apply shared/global data to views
         $env->share($this->data);
 
         // We will also set the container instance on this view environment since the
