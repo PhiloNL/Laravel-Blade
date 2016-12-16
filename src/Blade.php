@@ -15,6 +15,11 @@ use Illuminate\View\Factory;
 class Blade {
 
 	/**
+	 * Array containing data to be shared with all views
+	 * @var array
+	 */
+	public $data = [];
+	/**
 	 * Array containing paths where to look for blade files
 	 * @var array
 	 */
@@ -58,11 +63,12 @@ class Blade {
 
 		$this->registerViewFinder();
 
-		$this->instance = $this->registerFactory();
 	}
 
-	public function view()
+	public function view($data = [])
 	{
+		$this->data = $data;
+		$this->instance = $this->registerFactory();
 		return $this->instance;
 	}
 
@@ -173,6 +179,9 @@ class Blade {
 		$finder = $this->container['view.finder'];
 
 		$env = new Factory($resolver, $finder, $this->container['events']);
+
+		// apply shared/global data to views
+		$env->share($this->data);
 
 		// We will also set the container instance on this view environment since the
 		// view composers may be classes registered in the container, which allows
