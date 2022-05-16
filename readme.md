@@ -1,4 +1,4 @@
-### Installation (Blade Laravel 5.1)
+### Installation (Blade Laravel 5.1) - (Supports PHP 8])Z
 The package can be installed via Composer by requiring the "philo/laravel-blade": "3.*" package in your project's composer.json.
 
 ```json

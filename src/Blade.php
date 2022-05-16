@@ -36,13 +36,13 @@ class Blade {
 	 */
 	protected $instance;
 
-	/**
-	 * Initialize class
-	 * @param array  $viewPaths
-	 * @param string $cachePath
-	 * @param Illuminate\Events\Dispatcher $events
-	 */
-	function __construct($viewPaths = array(), $cachePath, Dispatcher $events = null) {
+    /**
+     * Initialize class
+     * @param array $viewPaths
+     * @param string $cachePath
+     * @param Dispatcher|null $events
+     */
+	function __construct($viewPaths, $cachePath, Dispatcher $events = null) {
 
 		$this->container = new Container;
 

@@ -17,5 +17,10 @@
         "psr-4": {
             "Philo\\Blade\\": "src"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
+        }
     }
 }
