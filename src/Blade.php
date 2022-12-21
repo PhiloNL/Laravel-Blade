@@ -159,7 +159,7 @@ class Blade {
 	/**
 	 * Register the view environment.
 	 *
-	 * @return void
+	 * @return Illuminate\View\Factory
 	 */
 	public function registerFactory()
 	{
